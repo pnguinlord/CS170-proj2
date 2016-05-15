@@ -1,0 +1,4 @@
+struct sem{
+  //make a process queue? how does the stalling work
+  int value;
+}

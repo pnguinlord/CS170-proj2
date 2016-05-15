@@ -1,0 +1,29 @@
+/* This file deals with the semaphore implementation. Entry points: 
+ *      sema_init: initializes semaphore, returns the next available semaphore. 
+ *      sema_down: equivalent to p(). returns EINVAL error if uninitialized semaphore. When the counter has a value of <0, calling process should be put to sleep. (waiting in queue that corresponds to the correct semaphore). On success, return 0
+ *      sema_up: equivalent to v(). Can only be called for initialized semaphore. Returns EINVAL otherwise. increment counter of semaphore. When there is at least one process waiting in Q, first process that was put to sleep should be woken. Return 0 on success
+ *      sema_release: create SEM_RELEASE message that is sent to semaphore service. Can only be invoked on active semaphore. Return EINVAL otherwise. Release active semaphore, put back into inactive state. Fail with EINUSE if processes exist that are waiting in the Q
+ */
+#include "sema.h"
+#include <string.h>
+#include<minix/com.h>
+#include "mproc.h"
+#include "param.h"
+/*===========================================================================*
+ *				sema_init				     *
+ *===========================================================================*
+
+
+
+
+/*===========================================================================*
+ *				sema_down				     *
+ *===========================================================================*
+
+/*===========================================================================*
+ *				sema_up				     *
+ *===========================================================================*
+
+/*===========================================================================*
+ *				sema_release				     *
+ *===========================================================================*
